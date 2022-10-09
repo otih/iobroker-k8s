@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iobroker
+  namespace: smarthome
+  labels:
+    app: iobroker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iobroker
+  template:
+    metadata:
+      labels:
+        app: iobroker
+    spec:
+      hostname: iobroker
+      volumes:
+      - name: iobroker
+        persistentVolumeClaim:
+          claimName: iobroker-pvc
+      containers:
+      - image: buanet/iobroker:latest
+        name: iobroker
+        imagePullPolicy: Always
+        env:
+        - name: PGID
+          value: "1000"
+        - name: PUID
+          value: "1000"
+        - name: TZ
+          value: Europe/Berlin
+        ports:
+         - containerPort: 8081
+           name: http-8081
+           protocol: TCP
+        volumeMounts:
+         - mountPath: /opt/iobroker
+           name: iobroker
+           subPath: iobroker
+        resources:
+          requests:
+            memory: "8Gi"

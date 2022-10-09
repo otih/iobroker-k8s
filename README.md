@@ -9,7 +9,7 @@ scenarios:
 - master/slave (iobroker and redis)
 
 All examples are based on the following:
-- nginx-ingress
+- nginx-ingress (selfsigned certs)
 - nfs persistent storage
 
 tools:

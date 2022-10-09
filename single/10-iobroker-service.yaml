@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: iobroker-service
+  namespace: smarthome
+spec:
+  selector:
+    app: iobroker
+  ports:
+    - name: https-8081
+      protocol: TCP
+      port: 8081

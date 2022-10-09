@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - 00-namespace.yaml
+  - 10-iobroker-pvc.yaml
+  - 10-iobroker-deployment.yaml
+  - 10-iobroker-service.yaml
+  - 10-iobroker-ingress.yaml
+  - 20-influxdb-secrets.yaml
+  - 20-influxdb-pvc.yaml
+  - 20-influxdb-deployment.yaml
+  - 20-influxdb-service.yaml
