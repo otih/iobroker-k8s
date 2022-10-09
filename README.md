@@ -1,7 +1,9 @@
 # iobroker-k8s
 
 This repo describe basic topics for getting [iobroker](https://www.iobroker.net/) application (and tools around) into [kubernetes](https://kubernetes.io) (k8s).
+
 Keep in mind, iobroker is not developed running within k8s and may need many many many future releases for a smooth operation within k8s.
+For getting started with k8s, I recommend the following blog articles: [thedatabaseme.de](https://thedatabaseme.de/tag/kubernetes/)
 
 scenarios:
 - single (everything)
